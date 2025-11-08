@@ -1,0 +1,29 @@
+:root{--accent:#0b5cff;--muted:#666}
+body{font-family:Segoe UI, Roboto, sans-serif;background:#f6f8fb;color:#111;margin:0;padding:0}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:#fff;border-bottom:1px solid #e3e8ef}
+header h1{margin:0;font-size:18px}
+.controls button{margin-left:8px}
+main{display:flex;height:calc(100vh - 60px)}
+nav{width:220px;background:#fff;border-right:1px solid #e3e8ef;padding:12px;box-sizing:border-box}
+nav .tab{display:block;width:100%;padding:8px;margin-bottom:6px;text-align:left;border:0;background:transparent;cursor:pointer;border-radius:6px}
+nav .tab:hover{background:#f0f4ff}
+#content{flex:1;padding:16px;overflow:auto}
+.list-header{display:flex;justify-content:space-between;align-items:center}
+.items{margin-top:12px}
+.item{background:#fff;padding:10px;border-radius:6px;border:1px solid #e6eaf2;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.item .meta{font-size:13px;color:var(--muted)}
+.item .actions button{margin-left:8px}
+form .field{margin-bottom:10px}
+form label{display:block;font-size:13px;margin-bottom:4px}
+form input[type=text], form textarea, form input[type=number]{width:100%;padding:8px;border:1px solid #d6dbe6;border-radius:6px}
+.dialog-actions{display:flex;justify-content:flex-end}
+#editorDialog{width:720px}
+/* array editor styles */
+.array-editor{background:#fff;border:1px solid #e6eaf2;padding:8px;border-radius:6px}
+.array-list{max-height:180px;overflow:auto;margin-bottom:8px}
+.array-item{display:flex;justify-content:space-between;align-items:center;padding:6px;border-bottom:1px solid #f1f4f8}
+.array-text{font-size:13px;color:#111}
+.array-actions button{margin-left:6px}
+.array-add{display:flex;gap:8px}
+.array-add .array-input{flex:1}
+.array-add button{padding:6px 10px}

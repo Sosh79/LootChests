@@ -1,0 +1,34 @@
+{
+  "LootChestsLocations": [
+    {
+      "name": "Police_Station",
+      "number": 5,
+      "pos": [
+        "10159.658203 248.123947 5535.251953|73.000000 0.000000 0.000000",
+        "7171.111328 297.695251 7665.231934|105.000000 0.000000 0.000000"
+      ],
+      "keyclass": "CJ_Key200",
+      "openable": 2,
+      "chest": ["CJ_LootChest_Ammo_Small_Brown","CJ_LootChest_Ammo_Large_Brown"],
+      "lootrandomize": 0.5,
+      "light": 1,
+      "loot": ["LC_Table_Weapons_Police","LC_Table_Magazines_Police"]
+    }
+  ],
+  "LCPredefinedWeapons": [
+    {
+      "defname": "LC_predefined_AK101",
+      "weapon": "AK101_Green",
+      "magazine": "Mag_AK101_30Rnd_Green",
+      "attachments": ["AK_FoldingBttstck_Green","AK_RailHndgrd_Green"],
+      "optic": "PSO1Optic",
+      "opticbattery": 1
+    }
+  ],
+  "LootCategories": [
+    {
+      "name": "LC_Table_Weapons_Police",
+      "Loot": ["LC_predefined_GLOCK19","LC_predefined_CZ75"]
+    }
+  ]
+}

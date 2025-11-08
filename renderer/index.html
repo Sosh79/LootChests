@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LootChests Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>LootChests Editor</h1>
+    <div class="controls">
+      <button id="btnOpen">Open JSON</button>
+      <button id="btnSave">Save JSON</button>
+      <button id="btnSaveAs">Save As...</button>
+      <button id="btnLoadSample">Load Sample</button>
+    </div>
+  </header>
+
+  <main>
+    <nav>
+      <button class="tab" data-target="LootChestsLocations">LootChestsLocations</button>
+      <button class="tab" data-target="LCPredefinedWeapons">LCPredefinedWeapons</button>
+      <button class="tab" data-target="LootCategories">LootCategories</button>
+    </nav>
+
+    <section id="content">
+      <!-- dynamic content injected here -->
+    </section>
+  </main>
+
+  <template id="list-template">
+    <div class="list-header">
+      <h2></h2>
+      <button class="add">Add</button>
+    </div>
+    <div class="items"></div>
+  </template>
+
+  <dialog id="editorDialog">
+    <form method="dialog">
+      <h3 id="dialogTitle">Edit</h3>
+
+      <div id="formFields"></div>
+
+      <menu>
+        <button id="btnCancel">Cancel</button>
+        <button id="btnOk">Save</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "lootchests-editor",
+  "version": "0.1.0",
+  "description": "Electron editor for LootChests JSON (LootChestsLocations, LCPredefinedWeapons, LootCategories)",
+  "main": "main.js",
+  "build": {
+    "appId": "com.lootchests.app",
+    "productName": "LootChests",
+    "files": [
+      "main.js",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^26.0.12"
+  }
+}
