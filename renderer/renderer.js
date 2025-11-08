@@ -307,7 +307,8 @@ async function saveFile() {
 }
 
 async function loadSample() {
-    const res = await window.api.readFile('D:/LootChests/sample_config.json');
+    // read the bundled sample in a way that works both in dev and after packaging
+    const res = await window.api.readFile('sample_config.json');
     if (!res) return alert('Unable to open sample.');
     if (res.error) return alert('Error: ' + res.error);
     try {

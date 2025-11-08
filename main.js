@@ -2,10 +2,20 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+// Ensure AppUserModelID is set on Windows so the taskbar/start menu use the correct icon
+// (value should match build.appId in package.json)
+try {
+    app.setAppUserModelId && app.setAppUserModelId('com.lootchests.app');
+} catch (e) {
+    // ignore if not supported
+}
+
 function createWindow() {
     const win = new BrowserWindow({
         width: 1100,
         height: 800,
+        // specify the window icon (works on Windows and Linux)
+        icon: path.join(__dirname, 'assets', 'icons', 'app.ico'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true,
@@ -64,7 +74,13 @@ ipcMain.handle('write-file', async (event, filePath, content) => {
 // Optionally: Load a file path directly (for sample or default)
 ipcMain.handle('read-file', async (event, filePath) => {
     try {
-        const content = fs.readFileSync(filePath, 'utf8');
+        // If caller passed a relative path, resolve it relative to the app directory so
+        // files bundled with the app (like sample_config.json) can be read after packaging.
+        let resolved = filePath;
+        if (resolved && !path.isAbsolute(resolved)) {
+            resolved = path.join(__dirname, resolved);
+        }
+        const content = fs.readFileSync(resolved, 'utf8');
         return { content };
     } catch (err) {
         return { error: err.message };

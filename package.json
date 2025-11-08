@@ -6,8 +6,12 @@
   "build": {
     "appId": "com.lootchests.app",
     "productName": "LootChests",
+    "icon": "assets/icons/app.ico",
     "files": [
       "main.js",
+      "preload.js",
+      "sample_config.json",
+      "assets/**/*",
       "renderer/**/*"
     ],
     "win": {
